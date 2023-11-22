@@ -2,17 +2,13 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { routes } from "routing/routes";
 import { map } from "lodash";
 import React from "react";
+import Layout from "Layout/Layout";
 
-
-interface Props {
-  isError: boolean;
-  setIsError: (isError: boolean) => void;
-}
-
-function Router({ isError, setIsError }: Props) {
+function Router() {
   return (
     <BrowserRouter>
       <Routes>
+          <Route path="/" element={<Layout/>}>
           {map(routes, ({ path, component: Component }) => (
             <Route
               key={path}
@@ -22,6 +18,8 @@ function Router({ isError, setIsError }: Props) {
               }
             />
           ))}
+          </Route>
+
       </Routes>
     </BrowserRouter>
   );

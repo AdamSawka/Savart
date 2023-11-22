@@ -8,8 +8,6 @@ import {
 import { get } from "react-hook-form";
 import "config/i18n";
 import Router from "routing/Router";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "style/Global.scss";
 import { StyledEngineProvider } from "@mui/material";
 
 function Root() {
