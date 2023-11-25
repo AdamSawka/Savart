@@ -9,15 +9,10 @@ import Footer from "components/Footer/Footer";
 import NavLinksList from "components/Navigation/NavLinkList";
 
 const LayoutWrapper = styled("div")({
-
 });
-
 const MainContentWrapper = styled(Box)<BoxProps>({
-
 });
-
 const ContentWrapper = styled("main")(({  }) => ({
-
 }));
 
 const Layout = () => {

@@ -7,10 +7,19 @@ const NavLinksList = () => {
     const navigation = () => {
         return [
             {
-                title: t("Actives Sessions"),
+                title: t("Home"),
                 path: routes.HOME.path,
-                navSection: t("Users"),
+            },  {
+                title: t("About Us"),
+                path: routes.ABOUT_US.path,
+            },  {
+                title: t("Gallery"),
+                path: routes.GALLERY.path,
+            },  {
+                title: t("Contact"),
+                path: routes.CONTACT.path,
             },
+
 
         ];
     };
