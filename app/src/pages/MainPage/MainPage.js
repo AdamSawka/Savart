@@ -1,6 +1,6 @@
 import React from "react";
-import {Contact} from "./Contact/Contact";
-import {AboutUs} from "./AboutUs/AboutUs";
+import {MainPageContact} from "./MainPageContact/MainPageContact";
+import {MainPageAboutUs} from "./MainPageAboutUs/MainPageAboutUs";
 import {Link} from "react-router-dom";
 import deers4 from "../../assets/deers4.jpg"
 import image from "../../assets/image3.jpg"
@@ -60,8 +60,8 @@ const MainPage = () => {
                 </div>
             </section>
             </div>
-            <AboutUs/>
-            <Contact/>
+            <MainPageAboutUs/>
+            <MainPageContact/>
 
         </>
 

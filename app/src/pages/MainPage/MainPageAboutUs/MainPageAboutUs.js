@@ -1,6 +1,6 @@
 import React  from "react";
 
-const AboutUs = () =>{
+const MainPageAboutUs = () =>{
 
     return<>
         <div className="about-us-container vh-100  d-flex align-items-center  ">
@@ -16,15 +16,9 @@ const AboutUs = () =>{
             <p>W swojej ofercie posiadamy również produkty w 100% wykonane ręcznie. </p>
         </section>
         <section>
-            <div> </div>
-            <div> </div>
-            <div></div>
-            <div></div>
-            <div></div>
-
         </section>
             </div>
         </div>
     </>
 }
-export {AboutUs}
+export {MainPageAboutUs}

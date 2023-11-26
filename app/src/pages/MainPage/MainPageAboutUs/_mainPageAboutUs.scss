@@ -1,7 +1,7 @@
 .about-us-container {
   &::before {
     content: "";
-    background: url("../../../assets/background-about.jpg") no-repeat center/cover;
+    //background: url("../../../assets/background-about.jpg") no-repeat center/cover;
     position: fixed;
     padding: 0 24px;
     top: -150px;
