@@ -1,7 +1,6 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
@@ -12,6 +11,8 @@ import MenuItem from '@mui/material/MenuItem';
 import logo from "assets/logo.png";
 import NavItems from "components/Navigation/NavLinkList";
 import { useNavigate } from 'react-router-dom';
+import {Input} from "@mui/material";
+import SearchIcon from '@mui/icons-material/Search';
 
 interface Props {
     navVisible:boolean;
@@ -32,9 +33,9 @@ function Navigation({navVisible,setNavVisible, toggleNavVisibility, NavLinksList
     const navigate = useNavigate();
 
     return (
-        <AppBar sx={{backgroundColor:"#6c87a4"}} position="static">
-            <Container maxWidth="xl">
-                <Toolbar disableGutters>
+        <AppBar sx={{backgroundColor:"#fff"}} position="static">
+            <Container maxWidth="xl" sx={{height:'250px'}}>
+                <Box >
                     <IconButton sx={{display:{md:'none'}}}  >
                         <Box component="img" style={{height:"60px", display:'none'}} alt="logo Savart" src={logo}/>
                     </IconButton>
@@ -72,26 +73,34 @@ function Navigation({navVisible,setNavVisible, toggleNavVisibility, NavLinksList
                                     handleCloseNavMenu();
                                     navigate(page.path);
                                 }}>
-                                    <Typography textAlign="center">{page.title}</Typography>
+                                    <Typography textAlign="center" sx={{color:"#222"}}>{page.title}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
                     </Box>
-                    <IconButton  >
-                        <Box component="img" style={{height:"60px"}} alt="logo Savart" src={logo}/>
-                    </IconButton>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                    <Box sx={{width:"100%", display:"flex", alignItems:"center", justifyContent:"space-between"}}>
+                        <IconButton  >
+                            <Box component="img" style={{height:"160px"}} alt="logo Savart" src={logo}/>
+                        </IconButton>
+                        <Box>
+                            <Input sx={{height:'40px'}} placeholder='szukaj'/>
+                            <Button>
+                                <SearchIcon sx={{color:"black"}} />
+                            </Button>
+                        </Box>
+                    </Box>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, marginLeft:"100px" }}>
                         {navigationElements.map((page, index) => (
                             <Button
                                 key={index}
                                 onClick={()=>{handleCloseNavMenu();   navigate(page.path);}}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                sx={{ my: 2, color: '#222', display: 'block', mx:5, fontSize:"16px" }}
                             >
                                 {page.title}
                             </Button>
                         ))}
                     </Box>
-                </Toolbar>
+                </Box>
             </Container>
         </AppBar>
     );
