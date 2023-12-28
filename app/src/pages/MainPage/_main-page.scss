@@ -7,3 +7,13 @@
     align-items: center;
   }
 }
+.background-image-main-page{
+  position: fixed;
+  //max-width: { xs: '100%', md: '1640px' },
+top: 0;
+z-index: -1;
+transform: translateX(-25%) translateY(0%),
+}
+
+
+

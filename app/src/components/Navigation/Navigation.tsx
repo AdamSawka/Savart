@@ -14,19 +14,7 @@ import { useNavigate } from 'react-router-dom';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { useTranslation } from 'react-i18next';
 
-interface Props {
-  navVisible: boolean;
-  setNavVisible: (value: boolean) => void;
-  toggleNavVisibility: () => void;
-  NavLinksList: any;
-}
-
-function Navigation({
-  navVisible,
-  setNavVisible,
-  toggleNavVisibility,
-  NavLinksList,
-}: Props) {
+function Navigation() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null,
   );
@@ -41,25 +29,27 @@ function Navigation({
   const navigate = useNavigate();
 
   return (
-    <AppBar sx={{ backgroundColor: '#fff' }} position='static'>
+    <AppBar
+      sx={{ backgroundColor: '#fff', maxWidth: '1640px' }}
+      position='sticky'
+    >
       <Container maxWidth='xl'>
         <Box>
-          <IconButton sx={{ display: { md: 'none' } }}>
-            <Box
-              component='img'
-              style={{ height: '32px', display: 'none' }}
-              alt='logo Savart'
-              src={logo}
-            />
-          </IconButton>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'flex', md: 'none' },
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
+          >
             <IconButton
               size='large'
               aria-label='account of current user'
               aria-controls='menu-appbar'
               aria-haspopup='true'
               onClick={handleOpenNavMenu}
-              color='inherit'
+              sx={{ color: 'black' }}
             >
               <MenuIcon />
             </IconButton>
@@ -95,6 +85,12 @@ function Navigation({
                 </MenuItem>
               ))}
             </Menu>
+            <Box
+              component='img'
+              style={{ height: '32px' }}
+              alt='logo Savart'
+              src={logo}
+            />
           </Box>
           <Box
             sx={{

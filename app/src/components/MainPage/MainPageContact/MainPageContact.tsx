@@ -35,7 +35,7 @@ const MainPageContact = () => {
         onSubmit={handleSubmit(sendEmail)}
       >
         <h3 className='text-center'>{t('Contact With Us')}</h3>
-        <Box sx={{ width: '100%' }}>
+        <Box sx={{ width: '100%' }} className='px-3'>
           <Controller
             control={control}
             name='user_email'

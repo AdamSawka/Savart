@@ -5,13 +5,13 @@ const MainPageAboutUs = () => {
     <>
       <div className='about-us-container  d-flex align-items-center  '>
         <div className='about-us-content'>
-          <section className='d-flex text-center row mx-5 '>
+          <section className='d-flex text-center row mx-2 '>
             <h1 className='fw-bolder my-5 '>O firmie</h1>
             <h4 className='mb-5 '>
               Jesteśmy po to aby dzielić się z innymi naszą pasją i zamiłowaniem
               do natury.
             </h4>
-            <p className=' '>
+            <p>
               Specjalizujemy się w projektowaniu i wykonywaniu ozdób przy użyciu
               naturalnych materiałów i najnowszych technologii. Nasza firma
               posiada bogato wyposażony warsztat, dzięki czemu wszystkie wyroby
