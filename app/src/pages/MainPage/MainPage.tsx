@@ -11,14 +11,14 @@ const MainPage = () => {
           src={backgroundLaser}
           style={{
             position: 'fixed',
+            maxWidth: '1640px',
             top: 0,
             zIndex: '-1',
           }}
+          alt='laser'
         />
-        <header className='  py-0 text-center shadow-2-strong rounded  header-mainPage '>
-          <div className=' d-flex justify-content-center  header-text'></div>
-        </header>
-        <section className=' py-5 bg-light'>
+        <header className='py-0 text-center shadow-2-strong rounded  header-mainPage' />
+        <section className='py-5 bg-light'>
           <MainPageCarousel />
           {/*<div className="container px-4 px-lg-5 mt-5">*/}
           {/*    <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">*/}
@@ -65,6 +65,7 @@ const MainPage = () => {
         </section>
       </div>
       <MainPageAboutUs />
+
       <MainPageContact />
     </>
   );
