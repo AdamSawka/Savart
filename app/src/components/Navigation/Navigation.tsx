@@ -21,7 +21,12 @@ interface Props {
   NavLinksList: any;
 }
 
-function Navigation() {
+function Navigation({
+  navVisible,
+  setNavVisible,
+  toggleNavVisibility,
+  NavLinksList,
+}: Props) {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null,
   );
