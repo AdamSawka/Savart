@@ -34,7 +34,7 @@ function Navigation({navVisible,setNavVisible, toggleNavVisibility, NavLinksList
 
     return (
         <AppBar sx={{backgroundColor:"#fff"}} position="static">
-            <Container maxWidth="xl" sx={{height:'250px'}}>
+            <Container maxWidth="xl" >
                 <Box >
                     <IconButton sx={{display:{md:'none'}}}  >
                         <Box component="img" style={{height:"60px", display:'none'}} alt="logo Savart" src={logo}/>
@@ -78,18 +78,9 @@ function Navigation({navVisible,setNavVisible, toggleNavVisibility, NavLinksList
                             ))}
                         </Menu>
                     </Box>
-                    <Box sx={{width:"100%", display:"flex", alignItems:"center", justifyContent:"space-between"}}>
-                        <IconButton  >
-                            <Box component="img" style={{height:"160px"}} alt="logo Savart" src={logo}/>
-                        </IconButton>
-                        <Box>
-                            <Input sx={{height:'40px'}} placeholder='szukaj'/>
-                            <Button>
-                                <SearchIcon sx={{color:"black"}} />
-                            </Button>
-                        </Box>
-                    </Box>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, marginLeft:"100px" }}>
+                 
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },mb:1, pl:4, position:"fixed", backgroundColor:"white", width:"100%", zIndex:4, left:0 }}>
+                            <Box component="img" style={{height:"70px"}} alt="logo Savart" src={logo}/>
                         {navigationElements.map((page, index) => (
                             <Button
                                 key={index}
