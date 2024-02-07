@@ -8,11 +8,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import logo from "assets/logo.png";
+import {ReactComponent as Logo}  from "assets/logo-savart.svg";
 import NavItems from "components/Navigation/NavLinkList";
 import { useNavigate } from 'react-router-dom';
-import {Input} from "@mui/material";
-import SearchIcon from '@mui/icons-material/Search';
 
 interface Props {
     navVisible:boolean;
@@ -37,7 +35,7 @@ function Navigation({navVisible,setNavVisible, toggleNavVisibility, NavLinksList
             <Container maxWidth="xl" >
                 <Box >
                     <IconButton sx={{display:{md:'none'}}}  >
-                        <Box component="img" style={{height:"60px", display:'none'}} alt="logo Savart" src={logo}/>
+                        <Logo style={{height:"80px"}}/>
                     </IconButton>
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
@@ -80,7 +78,8 @@ function Navigation({navVisible,setNavVisible, toggleNavVisibility, NavLinksList
                     </Box>
                  
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },mb:1, pl:4, position:"fixed", backgroundColor:"white", width:"100%", zIndex:4, left:0 }}>
-                            <Box component="img" style={{height:"70px"}} alt="logo Savart" src={logo}/>
+                    <Logo style={{height:"80px"}}/>
+
                         {navigationElements.map((page, index) => (
                             <Button
                                 key={index}

@@ -2,21 +2,27 @@ import React from 'react';
 import { MainPageContact } from 'components/MainPage/MainPageContact/MainPageContact';
 import { MainPageAboutUs } from 'components/MainPage/MainPageAboutUs/MainPageAboutUs';
 import { MainPageCarousel } from 'components/MainPage/Carousel/Carousel';
-import backgroundLaser from 'assets/laser-2795229_1920.jpg';
+import background from 'assets/forest-clouds.jpg';
+import {ReactComponent as Logo}  from "assets/logo-savart-white.svg";
+
 const MainPage = () => {
   return (
     <>
       <div>
         <img
-          src={backgroundLaser}
+          src={background}
           style={{
             position: 'fixed',
-            top: 0,
+            bottom:0,
+            objectFit:'contain',
             zIndex: '-1',
           }}
         />
         <header className='  py-0 text-center shadow-2-strong rounded  header-mainPage '>
-          <div className=' d-flex justify-content-center  header-text'></div>
+          <div className=' d-flex justify-content-center  header-text'>            
+                      <Logo style={{height:"400px", position:"fixed"}}/>
+
+</div>
         </header>
         <section className=' py-5 bg-light'>
           <MainPageCarousel />
