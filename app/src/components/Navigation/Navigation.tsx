@@ -8,92 +8,126 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import {ReactComponent as Logo}  from "assets/logo-savart.svg";
-import NavItems from "components/Navigation/NavLinkList";
+import { ReactComponent as Logo } from 'assets/logo-savart.svg';
+import NavItems from 'components/Navigation/NavLinkList';
 import { useNavigate } from 'react-router-dom';
+import BasketIcon from 'components/Navigation/BasketIcon';
+import { useTranslation } from 'react-i18next';
 
-interface Props {
-    navVisible:boolean;
-    setNavVisible:(value:boolean)=>void;
-    toggleNavVisibility:()=>void;
-    NavLinksList:any;
-}
+function Navigation() {
+  const { t } = useTranslation();
 
-function Navigation({navVisible,setNavVisible, toggleNavVisibility, NavLinksList}:Props) {
-    const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-    const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorElNav(event.currentTarget);
-    };
-    const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-    };
-    const navigationElements =NavItems()
-    const navigate = useNavigate();
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+    null,
+  );
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+  const navigationElements = NavItems();
+  const navigate = useNavigate();
 
-    return (
-        <AppBar sx={{backgroundColor:"#fff"}} position="static">
-            <Container maxWidth="xl" >
-                <Box >
-                    <IconButton sx={{display:{md:'none'}}}  >
-                        <Logo style={{height:"80px"}}/>
-                    </IconButton>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-                        <IconButton
-                            size="large"
-                            aria-label="account of current user"
-                            aria-controls="menu-appbar"
-                            aria-haspopup="true"
-                            onClick={handleOpenNavMenu}
-                            color="inherit"
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        <Menu
-                            id="menu-appbar"
-                            anchorEl={anchorElNav}
-                            anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'left',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'left',
-                            }}
-                            open={Boolean(anchorElNav)}
-                            onClose={handleCloseNavMenu}
-                            sx={{
-                                display: { xs: 'block', md: 'none' },
-                            }}
-                        >
-                            {navigationElements.map((page, index) => (
-                                <MenuItem key={index} onClick={() => {
-                                    handleCloseNavMenu();
-                                    navigate(page.path);
-                                }}>
-                                    <Typography textAlign="center" sx={{color:"#222"}}>{page.title}</Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu>
-                    </Box>
-                 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },mb:1, pl:4, position:"fixed", backgroundColor:"white", width:"100%", zIndex:4, left:0 }}>
-                    <Logo style={{height:"80px"}}/>
+  return (
+    <AppBar sx={{ backgroundColor: '#fff' }} position='static'>
+      <Container maxWidth='xl'>
+        <Box>
+          <IconButton sx={{ display: { md: 'none' } }}>
+            <Logo style={{ height: '80px' }} />
+          </IconButton>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size='large'
+              aria-label='account of current user'
+              aria-controls='menu-appbar'
+              aria-haspopup='true'
+              onClick={handleOpenNavMenu}
+              color='inherit'
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id='menu-appbar'
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+              {navigationElements.map((page, index) => (
+                <MenuItem
+                  key={index}
+                  onClick={() => {
+                    handleCloseNavMenu();
+                    navigate(page.path);
+                  }}
+                >
+                  <Typography textAlign='center' sx={{ color: '#222' }}>
+                    {page.title}
+                  </Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
 
-                        {navigationElements.map((page, index) => (
-                            <Button
-                                key={index}
-                                onClick={()=>{handleCloseNavMenu();   navigate(page.path);}}
-                                sx={{ my: 2, color: '#222', display: 'block', mx:5, fontSize:"16px" }}
-                            >
-                                {page.title}
-                            </Button>
-                        ))}
-                    </Box>
-                </Box>
-            </Container>
-        </AppBar>
-    );
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'none', md: 'grid' },
+              gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 6fr 1fr',
+              gridGap: '10px',
+              mb: 1,
+              pl: 4,
+              position: 'fixed',
+              backgroundColor: 'white',
+              width: '100%',
+              zIndex: 4,
+              left: 0,
+            }}
+          >
+            <Logo style={{ height: '80px' }} />
+
+            {navigationElements.map((page, index) => (
+              <Button
+                key={index}
+                onClick={() => {
+                  handleCloseNavMenu();
+                  navigate(page.path);
+                }}
+                sx={{
+                  my: 2,
+                  color: '#222',
+                  display: 'block',
+                  mx: 5,
+                  fontSize: '16px',
+                }}
+              >
+                {page.title}
+              </Button>
+            ))}
+            <BasketIcon />
+            <Button
+              sx={{ my: 2, mx: 2, color: '#552', borderColor: '#552' }}
+              variant='outlined'
+            >
+              {t('Account')}
+            </Button>
+          </Box>
+        </Box>
+      </Container>
+    </AppBar>
+  );
 }
 
 export default Navigation;

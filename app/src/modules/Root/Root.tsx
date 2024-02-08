@@ -1,24 +1,21 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo } from 'react';
 import {
   MutationCache,
   QueryCache,
   QueryClient,
   QueryClientProvider,
-} from "react-query";
-import { get } from "react-hook-form";
-import "config/i18n";
-import Router from "routing/Router";
-import { StyledEngineProvider } from "@mui/material";
+} from 'react-query';
+import { get } from 'react-hook-form';
+import 'config/i18n';
+import Router from 'routing/Router';
+import { StyledEngineProvider } from '@mui/material';
 
 function Root() {
-  const [isError, setIsError] = useState(false);
   const handleErrors = useCallback((error: unknown) => {
-    const statusCode = get(error, "response.status");
+    const statusCode = get(error, 'response.status');
 
     switch (statusCode) {
       case 401:
-        setIsError(true);
-        localStorage.removeItem("amILogged");
         return;
     }
   }, []);
@@ -32,10 +29,10 @@ function Root() {
         },
       },
       queryCache: new QueryCache({
-        onError: (err:any) => handleErrors(err),
+        onError: (err: any) => handleErrors(err),
       }),
       mutationCache: new MutationCache({
-        onError: (err:any) => handleErrors(err),
+        onError: (err: any) => handleErrors(err),
       }),
     });
   }, [handleErrors]);
@@ -45,18 +42,18 @@ function Root() {
       const body = globalThis.document.body;
 
       const observer = new MutationObserver(() => {
-        body.style.touchAction = body.style.overflow === "hidden" ? "none" : "";
+        body.style.touchAction = body.style.overflow === 'hidden' ? 'none' : '';
       });
       observer.observe(body, {
         attributes: true,
-        attributeFilter: ["style"],
+        attributeFilter: ['style'],
       });
     }
   }, []);
   return (
     <QueryClientProvider client={queryClient} contextSharing={true}>
       <StyledEngineProvider injectFirst>
-        <Router isError={isError} setIsError={setIsError} />
+        <Router />
       </StyledEngineProvider>
     </QueryClientProvider>
   );
