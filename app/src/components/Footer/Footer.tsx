@@ -5,7 +5,8 @@ import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
   const { t } = useTranslation();
-
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
   return (
     <div className='footer-container'>
       <MDBFooter
@@ -88,7 +89,7 @@ const Footer = () => {
                 </p>
                 <p>
                   <i className='fa fa-envelope me-3'> </i>
-                  savart@store.com
+                  Savart@store.com
                 </p>
                 <p>
                   <i className='fa fa-phone me-3'> </i> + 01 234 567 88
@@ -105,10 +106,7 @@ const Footer = () => {
           className='text-center p-4'
           style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}
         >
-          © 2023 Copyright:{' '}
-          <Link to=' ' className='text-reset fw-bold'>
-            Savart
-          </Link>
+          © {currentYear} Copyright: Savart
         </div>
       </MDBFooter>
     </div>

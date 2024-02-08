@@ -22,20 +22,22 @@ const MainPageCarousel = () => {
   ];
 
   return (
-    <Carousel animation='slide' interval='6000'>
-      {items.map((item, i) => (
-        <Paper key={i} sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Button className='CheckButton'>
-            <img
-              width={'640px'}
-              height={'480px'}
-              src={item.img}
-              alt={item.description}
-            />
-          </Button>
-        </Paper>
-      ))}
-    </Carousel>
+    <div>
+      <Carousel animation='slide' interval='6000'>
+        {items.map((item, i) => (
+          <Paper sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Button className='CheckButton'>
+              <img
+                width={'640px'}
+                height={'480px'}
+                src={item.img}
+                alt={item.description}
+              />
+            </Button>
+          </Paper>
+        ))}
+      </Carousel>
+    </div>
   );
 };
 export { MainPageCarousel };
