@@ -1,8 +1,8 @@
-import { routes } from "routing/routes";
-import { useTranslation } from "react-i18next";
+import { routes } from 'routing/routes';
+import { useTranslation } from 'react-i18next';
 
 const NavLinksList = () => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
   const navigation = () => {
     return [

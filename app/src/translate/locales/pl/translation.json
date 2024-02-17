@@ -15,22 +15,15 @@
     "Basket": "Koszyk",
     "Special Offers": "Promocje",
     "Complaints": "Reklamacje",
-    "Contact With Us": "Napisz do nas",
-    "Send Message": "Wyślij wiadomość",
-    "Send": "Wyślij",
-    "Fill Message": "Wpisz wiadomość",
     "Popular products": "Popularne produkty",
-    "More":"Więcej",
-    "New":"Nowość",
-    "New Collection":"Nowa kolekcja",
-    "Check":"Sprawdź",
-    "Buy":"Kup",
-    "Add Basket": "Dodaj do koszyka",
+    "More": "Więcej",
     "Send mail": "Wyślij wiadomość",
     "Contact with us": "Napisz do nas",
     "Fill Name": "Wpisz imię:",
     "Fill Mail": "Wpisz mail:",
     "Message": "Wiadomość",
-    "Add To Basket": "Dodaj do koszyka",
-    "Account": "Konto"
+    "Account": "Konto",
+    "Add To Basket": "Dodaj do koszyka"
+
+
 }
