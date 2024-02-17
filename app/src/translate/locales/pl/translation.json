@@ -19,7 +19,6 @@
     "Send Message": "Wyślij wiadomość",
     "Send": "Wyślij",
     "Fill Message": "Wpisz wiadomość",
-    "Fill Mail": "Wpisz email",
     "Popular products": "Popularne produkty",
     "More":"Więcej",
     "New":"Nowość",
@@ -30,6 +29,8 @@
     "Send mail": "Wyślij wiadomość",
     "Contact with us": "Napisz do nas",
     "Fill Name": "Wpisz imię:",
+    "Fill Mail": "Wpisz mail:",
     "Message": "Wiadomość",
+    "Add To Basket": "Dodaj do koszyka",
     "Account": "Konto"
 }

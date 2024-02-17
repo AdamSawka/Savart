@@ -1,15 +1,11 @@
-import { routes } from 'routing/routes';
-import { useTranslation } from 'react-i18next';
+import { routes } from "routing/routes";
+import { useTranslation } from "react-i18next";
 
 const NavLinksList = () => {
-  const { t } = useTranslation();
+    const { t } = useTranslation();
 
   const navigation = () => {
     return [
-      {
-        title: t('Main Page'),
-        path: routes.HOME.path,
-      },
       {
         title: t('About Us'),
         path: routes.ABOUT_US.path,
