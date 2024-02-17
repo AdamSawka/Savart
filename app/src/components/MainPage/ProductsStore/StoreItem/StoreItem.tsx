@@ -6,9 +6,10 @@ interface Props {
   minPrice: number;
   maxPrice: number;
   link: string;
+  name: string;
 }
 
-const StoreItem = ({ image, minPrice, maxPrice, link }: Props) => {
+const StoreItem = ({ image, minPrice, maxPrice, link, name }: Props) => {
   const { t } = useTranslation();
 
   return (
@@ -17,7 +18,7 @@ const StoreItem = ({ image, minPrice, maxPrice, link }: Props) => {
         <img alt='deer' className='card-img-top' src={image} />
         <div className='card-body p-4'>
           <div className='text-center'>
-            <h5 className='fw-bolder'>{t('Popular products')}</h5>
+            <h5 className='fw-bolder'>{name}</h5>
             {minPrice}PLN - {maxPrice}PLN
           </div>
         </div>

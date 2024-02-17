@@ -6,6 +6,11 @@
   position: relative;
 
   /* ---------- Fog ---------- */
+  .fog-container{
+    position: relative;
+    width: 100vw;
+    height: 100%;
+    overflow: hidden;
 
   .fogwrapper {
     height: 100%;
@@ -162,7 +167,7 @@
     0% { left: 0; }
     100% { left: -100%; }
   }
-  
+
   @media only screen
     and (min-width: 280px)
     and (max-width: 767px) {
@@ -172,7 +177,7 @@
         width: 100%;
       }
     }
-
+  }
   .header-text{
     height: 100%;
     align-items: center;
