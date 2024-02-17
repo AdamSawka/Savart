@@ -7,10 +7,6 @@ const NavLinksList = () => {
   const navigation = () => {
     return [
       {
-        title: t('Main Page'),
-        path: routes.HOME.path,
-      },
-      {
         title: t('About Us'),
         path: routes.ABOUT_US.path,
       },

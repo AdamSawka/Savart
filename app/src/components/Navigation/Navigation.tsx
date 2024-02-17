@@ -10,9 +10,10 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { ReactComponent as Logo } from 'assets/logo-savart.svg';
 import NavItems from 'components/Navigation/NavLinkList';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import BasketIcon from 'components/Navigation/BasketIcon';
 import { useTranslation } from 'react-i18next';
+import { routes } from 'routing/routes';
 
 function Navigation() {
   const { t } = useTranslation();
@@ -34,7 +35,9 @@ function Navigation() {
       <Container maxWidth='xl'>
         <Box>
           <IconButton sx={{ display: { md: 'none' } }}>
-            <Logo style={{ height: '80px' }} />
+            <Link to={routes.HOME.path}>
+              <Logo style={{ height: '80px' }} />
+            </Link>
           </IconButton>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -85,7 +88,7 @@ function Navigation() {
             sx={{
               flexGrow: 1,
               display: { xs: 'none', md: 'grid' },
-              gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 6fr 1fr',
+              gridTemplateColumns: ' 1fr 1fr 1fr 1fr 6fr 1fr',
               gridGap: '10px',
               mb: 1,
               pl: 4,
@@ -96,8 +99,9 @@ function Navigation() {
               left: 0,
             }}
           >
-            <Logo style={{ height: '80px' }} />
-
+            <Link to={routes.HOME.path}>
+              <Logo style={{ height: '80px' }} />
+            </Link>
             {navigationElements.map((page, index) => (
               <Button
                 key={index}
