@@ -43,14 +43,14 @@
     -moz-animation: foglayer_02_opacity 31s linear infinite, foglayer_moveme 23s linear infinite;
     animation: foglayer_02_opacity 31s linear infinite, foglayer_moveme 23s linear infinite;
   }
-
+  
   /* ---------- Moving Fog ---------- */
   /*
     'size: cover' || 'size: 100%'; results remain the same
     'attachment: scroll' can be added or removed; results remain the same
     'attachment: fixed' causing unexpected results in Chrome
     'repeat-x' || 'no-repeat'; results remain the same
-  */
+  */ 
   #foglayer_01 .image01, #foglayer_01 .image02 {
     background: url("https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog1.png") center center/cover no-repeat transparent;
   }
@@ -58,7 +58,7 @@
   #foglayer_03 .image01, #foglayer_03 .image02{
     background: url("https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog2.png") center center/cover no-repeat transparent;
   }
-
+  
   /* ---------- Keyframe Layer 1 ---------- */
   @-webkit-keyframes foglayer_01_opacity {
     0% { opacity: .1; }
