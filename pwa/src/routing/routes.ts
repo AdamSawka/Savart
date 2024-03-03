@@ -3,6 +3,8 @@ import Contact from 'pages/Contact/Contact';
 import Gallery from 'pages/Gallery/Gallery';
 import MainPage from 'pages/MainPage/MainPage';
 import SingleProduct from 'pages/SingleProduct/SingleProduct';
+import Login from "pages/Login/Login";
+import SignUp from "pages/SignUp/SignUp";
 
 export const routes = {
   HOME: {
@@ -24,6 +26,16 @@ export const routes = {
     path: '/gallery',
     name: 'Gallery',
     component: Gallery,
+  },
+  LOGIN: {
+    path: '/login',
+    name: 'Login',
+    component: Login,
+  },
+  SIGNUP: {
+    path: '/signUp',
+    name: 'SignUp',
+    component: SignUp,
   },
   PRODUCT: {
     path: '/product/:id',

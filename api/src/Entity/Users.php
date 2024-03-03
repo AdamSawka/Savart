@@ -14,16 +14,16 @@ class Users
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 32)]
+    #[ORM\Column(name: 'login')]
     private ?string $login = null;
 
-    #[ORM\Column(length: 64)]
+    #[ORM\Column(name: 'password')]
     private ?string $password = null;
 
-    #[ORM\Column(length: 32)]
+    #[ORM\Column(name: 'email')]
     private ?string $email = null;
 
-    #[ORM\Column(length: 32, nullable: true)]
+    #[ORM\Column(name: '$role')]
     private ?string $role = null;
 
     public function getId(): ?int
