@@ -58,5 +58,13 @@
   "First Name": "Imię",
   "Last Name": "Nazwisko",
   "Email Address": "Adres Email",
-  "Already have an account? Sign in": "Posiadasz już konto? Zaloguj się"
+  "Already have an account? Sign in": "Posiadasz już konto? Zaloguj się",
+  "Edit Products": "Edytuj produkty",
+  "Name": "Nazwa",
+  "Quantity": "Ilość",
+  "Min Price": "Cena min",
+  "Max Price": "Cena max",
+  "Category v1": "Kategoria",
+  "Description": "Opis",
+  "Image": "Obraz"
 }

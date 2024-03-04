@@ -5,8 +5,13 @@ import {Box, Card} from '@mui/material';
 import {map} from 'lodash';
 import {products} from 'mockData';
 import Filters from "components/MainPage/ProductsStore/Filters/Filters";
+import useGetProductsQuery from "hooks/useGetProductsQuery";
 
 const ProductsStore = () => {
+
+  const {data, isLoading}
+    = useGetProductsQuery()
+  console.log(data);
 
   return (
     <Card sx={{backgroundColor: 'lightGray', margin: 5}}>

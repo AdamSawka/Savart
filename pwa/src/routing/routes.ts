@@ -5,6 +5,7 @@ import MainPage from 'pages/MainPage/MainPage';
 import SingleProduct from 'pages/SingleProduct/SingleProduct';
 import Login from "pages/Login/Login";
 import SignUp from "pages/SignUp/SignUp";
+import Admin from "pages/Admin/Admin";
 
 export const routes = {
   HOME: {
@@ -41,5 +42,10 @@ export const routes = {
     path: '/product/:id',
     name: 'Product',
     component: SingleProduct,
+  },
+  ADMIN: {
+    path: '/admin',
+    name: 'Admin',
+    component: Admin,
   },
 };

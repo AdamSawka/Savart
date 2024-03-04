@@ -2,33 +2,42 @@
 
 namespace App\Controller;
 
-use App\Exception\NotFoundException;
+use App\Entity\Product;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\Products;
-use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class ProductsController extends AbstractController
 {
-    #[Groups(['user:write', 'user:read'])]
-    private ?Products $products = null;
-       $userPermissionsEditService;
+    private EntityManagerInterface $entityManager;
+    private SerializerInterface $serializer;
 
+    public function __construct(EntityManagerInterface $entityManager, SerializerInterface $serializer)
+    {
+        $this->entityManager = $entityManager;
+        $this->serializer = $serializer;
+    }
 
-    #[Route('/products', name:"getProducts", methods: ['GET'])]
+    #[Route('/products', name: 'getProducts', methods: ['GET'])]
+    public function __invoke(): JsonResponse
+    {
+        $productsRepository = $this->entityManager->getRepository(Product::class);
 
-     public function getProducts(Request $request): Response
-     {
-         try {
-             $productsData = json_decode($request->getContent(), true);
-             $this->userPermissionsEditService->editPermissions( $productsData);
-             return new JsonResponse(['message' => 'ok']);
-         } catch (NotFoundException $e) {
-             return new JsonResponse(['message' => $e->getMessage()], Response::HTTP_NOT_FOUND);
-         }
-     }
+        $products = $productsRepository->findAll();
 
+        $data = $this->serialize($products, 'user:read');
+
+        return new JsonResponse($data, JsonResponse::HTTP_OK);
+    }
+
+    private function serialize($data, $group): array
+    {
+        $context = [
+            'groups' => $group,
+        ];
+
+        return $this->serializer->normalize($data, null, $context);
+    }
 }

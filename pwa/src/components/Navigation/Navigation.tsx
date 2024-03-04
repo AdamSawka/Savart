@@ -89,7 +89,7 @@ function Navigation() {
             sx={{
               flexGrow: 1,
               display: {xs: 'none', md: 'grid'},
-              gridTemplateColumns: ' 1fr 1fr 1fr 1fr 6fr 1fr',
+              gridTemplateColumns: ' 1fr 1fr 1fr 1fr 5fr 1fr 1fr',
               gridGap: '10px',
               mb: 1,
               pl: 4,
@@ -126,13 +126,23 @@ function Navigation() {
               sx={{my: 2, mx: 2, color: '#552', borderColor: '#552'}}
               variant='outlined'
             >
-              <Link to={routes.LOGIN.path} style={{
+              <Link to={routes.ADMIN.path} style={{
                 textDecoration: "none",
                 color: customTheme.palette.primary.main
               }}>
-                {t('Account')}
+                {t('Admin')}
               </Link>
-            </Button>
+            </Button> <Button
+            sx={{my: 2, mx: 2, color: '#552', borderColor: '#552'}}
+            variant='outlined'
+          >
+            <Link to={routes.LOGIN.path} style={{
+              textDecoration: "none",
+              color: customTheme.palette.primary.main
+            }}>
+              {t('Account')}
+            </Link>
+          </Button>
           </Box>
         </Box>
       </Container>
