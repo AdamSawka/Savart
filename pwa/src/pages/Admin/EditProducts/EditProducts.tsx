@@ -1,17 +1,14 @@
 import React, {useEffect} from 'react';
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
+  Button,
+  Divider,
   Typography
 } from "@mui/material";
 import {useTranslation} from "react-i18next";
 import useGetProductsQuery from "hooks/useGetProductsQuery";
 import {useFieldArray, useForm} from "react-hook-form";
-import {map} from "lodash"
 import Loader from "components/Common/Loader/Loader";
+import EditProductsTable from "pages/Admin/EditProducts/EditProductTable";
 
 interface FormInputs {
   products: Array<{
@@ -29,51 +26,37 @@ interface FormInputs {
 function EditProducts() {
   const {t} = useTranslation();
 
-  const {data, isLoading} = useGetProductsQuery()
+  const {data, isLoading} = useGetProductsQuery({});
+  const {control, reset, handleSubmit, register} = useForm<FormInputs>();
+  const {append, fields, remove} = useFieldArray({control, name: "products"});
 
-  const {control, reset, handleSubmit, register} = useForm<FormInputs>()
-  const {append, fields} = useFieldArray({control, name: "products"})
   useEffect(() => {
+    console.log('gdfg');
     reset({
       products: data?.["hydra:member"]
-    })
-  }, [])
+    });
+  }, [data]);
 
   return (
     <div style={{marginTop: "100px"}}>
       {isLoading && <Loader/>}
-      <Typography>{t('Edit Products')}</Typography>
-      <Table sx={{maxWidth: 1050}} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell align="right">{t('Name')}</TableCell>
-            <TableCell align="right">{t('Quantity')}</TableCell>
-            <TableCell align="right">{t('Min Price')}</TableCell>
-            <TableCell align="right">{t('Max Price')}</TableCell>
-            <TableCell align="right">{t('Category v1')}</TableCell>
-            <TableCell align="right">{t('Description')}</TableCell>
-            <TableCell align="right">{t('Image')}</TableCell>
-          </TableRow>
-        </TableHead>
-        {data && <TableBody>
-          {map(fields, (row) => (
-            <TableRow
-              key={row?.id}
-              sx={{'&:last-child td, &:last-child th': {border: 0}}}
-            >
-              <TableCell component="th" scope="row">
-                {row?.name}
-              </TableCell>
-              <TableCell align="right">{row?.quantity}</TableCell>
-              <TableCell align="right">{row?.minPrice}</TableCell>
-              <TableCell align="right">{row?.maxPrice}</TableCell>
-              <TableCell align="right">{row?.category}</TableCell>
-              <TableCell align="right">{row?.description}</TableCell>
-              <TableCell align="right">{row?.image}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>}
-      </Table>
+      <Typography sx={{fontWeight: 600, textAlign: "center", mb: 3}}>
+        {t('Edit Products')}
+      </Typography>
+      <Button variant="outlined" onClick={() => append({
+        id: 0,
+        name: '',
+        quantity: 0,
+        minPrice: 0,
+        maxPrice: 0,
+        category: '',
+        description: '',
+        image: '',
+      })}>
+        {t('Add Product')}
+      </Button>
+      <Divider/>
+      <EditProductsTable fields={fields} control={control} remove={remove}/>
     </div>
   );
 }

@@ -66,5 +66,9 @@
   "Max Price": "Cena max",
   "Category v1": "Kategoria",
   "Description": "Opis",
-  "Image": "Obraz"
+  "Image": "Obraz",
+  "Add Product": "Dodaj produkt",
+  "Delete": "Usuń",
+  "Do You Want Delete Item?": "Czy chcesz usunąć element?",
+  "Action": "Akcja"
 }
