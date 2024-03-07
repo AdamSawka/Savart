@@ -9,6 +9,7 @@ import useGetProductsQuery from "hooks/useGetProductsQuery";
 import {useFieldArray, useForm} from "react-hook-form";
 import Loader from "components/Common/Loader/Loader";
 import EditProductsTable from "pages/Admin/EditProducts/EditProductTable";
+import usePostProductsMutation from "hooks/usePostProductsMutation";
 
 interface FormInputs {
   products: Array<{
@@ -30,13 +31,32 @@ function EditProducts() {
   const {control, reset, handleSubmit, register} = useForm<FormInputs>();
   const {append, fields, remove} = useFieldArray({control, name: "products"});
 
+  const {mutate: postProducts, isLoading: postProductsLoading} =
+    usePostProductsMutation();
+
   useEffect(() => {
     console.log('gdfg');
     reset({
       products: data?.["hydra:member"]
     });
   }, [data]);
-
+  const onSubmit = (data: any) => {
+    console.log(data);
+    postProducts(
+      {
+        products: data.products,
+      },
+      {
+        onSuccess: () => {
+          // setOpenSuccess(true);
+        },
+        onError: () => {
+          // setOpenSuccess(false);
+          // setOpenError(true);
+        },
+      }
+    );
+  }
   return (
     <div style={{marginTop: "100px"}}>
       {isLoading && <Loader/>}
@@ -56,7 +76,10 @@ function EditProducts() {
         {t('Add Product')}
       </Button>
       <Divider/>
-      <EditProductsTable fields={fields} control={control} remove={remove}/>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <EditProductsTable fields={fields} control={control} remove={remove}/>
+        <Button type='submit'>{t('Save')}</Button>
+      </form>
     </div>
   );
 }

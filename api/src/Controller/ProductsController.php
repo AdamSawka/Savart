@@ -5,39 +5,40 @@ namespace App\Controller;
 use App\Entity\Product;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
-use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class ProductsController extends AbstractController
 {
-    private EntityManagerInterface $entityManager;
-    private SerializerInterface $serializer;
-
-    public function __construct(EntityManagerInterface $entityManager, SerializerInterface $serializer)
+    /**
+     * @Route("/products/{id}", name="edit_product", methods={"PUT"})
+     */
+    public function editProduct(int $id, Request $request, EntityManagerInterface $entityManager): Response
     {
-        $this->entityManager = $entityManager;
-        $this->serializer = $serializer;
-    }
+        $productRepository = $entityManager->getRepository(Product::class);
 
-    #[Route('/products', name: 'getProducts', methods: ['GET'])]
-    public function __invoke(): JsonResponse
-    {
-        $productsRepository = $this->entityManager->getRepository(Product::class);
+        $existingProduct = $productRepository->find($id);
 
-        $products = $productsRepository->findAll();
+        $data = json_decode($request->getContent(), true);
 
-        $data = $this->serialize($products, 'user:read');
+        if (!$existingProduct) {
+            $product = new Product();
+        } else {
+            $product = $existingProduct;
+        }
 
-        return new JsonResponse($data, JsonResponse::HTTP_OK);
-    }
+        $product->setName($data['name']);
+        $product->setQuantity($data['quantity']);
+        $product->setMinPrice($data['minPrice']);
+        $product->setMaxPrice($data['maxPrice']);
+        $product->setCategory($data['category']);
+        $product->setDescription($data['description']);
+        $product->setImage($data['image']);
 
-    private function serialize($data, $group): array
-    {
-        $context = [
-            'groups' => $group,
-        ];
+        $entityManager->persist($product);
+        $entityManager->flush();
 
-        return $this->serializer->normalize($data, null, $context);
+        return new Response('Product saved/updated!', Response::HTTP_OK);
     }
 }

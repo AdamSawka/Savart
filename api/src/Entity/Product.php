@@ -3,51 +3,47 @@
 namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
-use ApiPlatform\Metadata\GetCollection;
-use App\Controller\ProductController;
 use App\Repository\ProductRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use JetBrains\PhpStorm\Pure;
 
 #[ApiResource()]
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
 class Product
 {
+    protected Collection $tags;
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
-
     #[ORM\Column(length: 100)]
     private ?string $name = null;
-
     #[ORM\Column(type: 'integer', nullable: true)]
     private ?int $quantity = null;
-
     #[ORM\Column(type: 'integer', nullable: true)]
     private ?int $minPrice = null;
-
     #[ORM\Column(type: 'integer', nullable: true)]
     private ?int $maxPrice = null;
-
     #[ORM\Column(type: 'integer', scale: 1, nullable: true)]
     private ?int $category = null;
-
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $description = null;
-
     #[ORM\Column(length: 10000, nullable: true)]
     private ?string $image = null;
+
+    private string $columnName;
+
+    #[Pure] public function __construct()
+    {
+        $this->tags = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function setId(?int $id): static
-    {
-        $this->id = $id;
-
-        return $this;
     }
 
     public function getName(): ?string

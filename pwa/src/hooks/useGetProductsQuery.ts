@@ -3,7 +3,7 @@ import {getApiClient} from "helpers/Global";
 import {AxiosError} from "axios";
 
 const path = `${process.env.REACT_APP_API_ENDPOINT}/products`;
-const queryKey = "products";
+const queryKey = "get-products";
 
 
 const getProducts = async () => {
