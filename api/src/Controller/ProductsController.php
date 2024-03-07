@@ -2,23 +2,43 @@
 
 namespace App\Controller;
 
+use App\Entity\Product;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\Products;
-use Symfony\Component\Serializer\Annotation\Groups;
-
+use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class ProductsController extends AbstractController
 {
-    #[Groups(['user:write', 'user:read'])]
-    private ?Products $products = null;
-
     /**
-     * @Route("/products", name="products_index")
+     * @Route("/products/{id}", name="edit_product", methods={"PUT"})
      */
-    public function getProducts(): Products
+    public function editProduct(int $id, Request $request, EntityManagerInterface $entityManager): Response
     {
-        return $this->products;
-    }
+        $productRepository = $entityManager->getRepository(Product::class);
 
+        $existingProduct = $productRepository->find($id);
+
+        $data = json_decode($request->getContent(), true);
+
+        if (!$existingProduct) {
+            $product = new Product();
+        } else {
+            $product = $existingProduct;
+        }
+
+        $product->setName($data['name']);
+        $product->setQuantity($data['quantity']);
+        $product->setMinPrice($data['minPrice']);
+        $product->setMaxPrice($data['maxPrice']);
+        $product->setCategory($data['category']);
+        $product->setDescription($data['description']);
+        $product->setImage($data['image']);
+
+        $entityManager->persist($product);
+        $entityManager->flush();
+
+        return new Response('Product saved/updated!', Response::HTTP_OK);
+    }
 }
