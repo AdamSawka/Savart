@@ -3,6 +3,9 @@ import Contact from 'pages/Contact/Contact';
 import Gallery from 'pages/Gallery/Gallery';
 import MainPage from 'pages/MainPage/MainPage';
 import SingleProduct from 'pages/SingleProduct/SingleProduct';
+import Login from "pages/Login/Login";
+import SignUp from "pages/SignUp/SignUp";
+import Admin from "pages/Admin/Admin";
 
 export const routes = {
   HOME: {
@@ -25,9 +28,24 @@ export const routes = {
     name: 'Gallery',
     component: Gallery,
   },
+  LOGIN: {
+    path: '/login',
+    name: 'Login',
+    component: Login,
+  },
+  SIGNUP: {
+    path: '/signUp',
+    name: 'SignUp',
+    component: SignUp,
+  },
   PRODUCT: {
     path: '/product/:id',
     name: 'Product',
     component: SingleProduct,
+  },
+  ADMIN: {
+    path: '/admin',
+    name: 'Admin',
+    component: Admin,
   },
 };

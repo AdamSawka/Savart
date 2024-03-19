@@ -1,14 +1,14 @@
 import React from 'react';
 import emailjs from 'emailjs-com';
-import { useForm, Controller } from 'react-hook-form';
+import {useForm, Controller} from 'react-hook-form';
 import Button from '@mui/material/Button';
-import { Input, TextareaAutosize } from '@mui/material';
-import { useTranslation } from 'react-i18next';
+import {Input, TextareaAutosize} from '@mui/material';
+import {useTranslation} from 'react-i18next';
 import Box from '@mui/material/Box';
 
 const MainPageContact = () => {
-  const { t } = useTranslation();
-  const { control } = useForm();
+  const {t} = useTranslation();
+  const {control} = useForm();
 
   function sendEmail(e) {
     e.preventDefault();
@@ -44,12 +44,12 @@ const MainPageContact = () => {
             control={control}
             type='text'
             name='user_name'
-            render={({ field: { value, onChange } }) => (
+            render={({field: {value, onChange}}) => (
               <Input
                 placeholder={t('Fill Name')}
                 value={value}
                 onChange={onChange}
-                sx={{ margin: 2, width: '300px' }}
+                sx={{margin: 2, width: '300px'}}
               />
             )}
           />
@@ -57,13 +57,13 @@ const MainPageContact = () => {
             control={control}
             type='email'
             name='user_email'
-            render={({ field: { value, onChange } }) => (
+            render={({field: {value, onChange}}) => (
               <Input
                 placeholder={t('Fill Mail')}
                 value={value}
                 type='textarea'
                 onChange={onChange}
-                sx={{ margin: 2, width: '300px' }}
+                sx={{margin: 2, width: '300px'}}
               />
             )}
           />
@@ -71,13 +71,13 @@ const MainPageContact = () => {
             control={control}
             type='text'
             name='text'
-            render={({ field: { value, onChange } }) => (
+            render={({field: {value, onChange}}) => (
               <TextareaAutosize
                 placeholder={t('Message')}
                 value={value}
                 minRows={5}
                 onChange={onChange}
-                style={{ margin: 3, width: '500px' }}
+                style={{margin: 3, width: '500px'}}
               />
             )}
           />
@@ -95,4 +95,4 @@ const MainPageContact = () => {
   );
 };
 
-export { MainPageContact };
+export {MainPageContact};

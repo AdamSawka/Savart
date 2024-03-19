@@ -1,24 +1,26 @@
 import React from 'react';
-import { MainPageContact } from 'components/MainPage/MainPageContact/MainPageContact';
-import { MainPageCarousel } from 'components/MainPage/Carousel/Carousel';
+import {MainPageContact} from 'components/MainPage/MainPageContact/MainPageContact';
+import {MainPageCarousel} from 'components/MainPage/Carousel/Carousel';
 import background from 'assets/forest-clouds.jpg';
-import { ReactComponent as Logo } from 'assets/logo-savart-white.svg';
+import {ReactComponent as Logo} from 'assets/logo-savart-white.svg';
 import ProductsStore from 'components/MainPage/ProductsStore/ProductsStore';
+import {MainPageAboutUs} from "components/MainPage/MainPageAboutUs/MainPageAboutUs";
+import OurServices from "components/MainPage/OurServices/OurServices";
 
 const FogStyle = () => {
   return (
     <div className='fog-container'>
       <div id='foglayer_01' className='fog'>
-        <div className='image01' />
-        <div className='image02' />
+        <div className='image01'/>
+        <div className='image02'/>
       </div>
       <div id='foglayer_02' className='fog'>
-        <div className='image01' />
-        <div className='image02' />
+        <div className='image01'/>
+        <div className='image02'/>
       </div>
       <div id='foglayer_03' className='fog'>
-        <div className='image01' />
-        <div className='image02' />
+        <div className='image01'/>
+        <div className='image02'/>
       </div>
     </div>
   );
@@ -40,16 +42,18 @@ const MainPage = () => {
         />
         <header className='  py-0 text-center shadow-2-strong rounded  header-mainPage '>
           <div className=' d-flex justify-content-center  header-text'>
-            <FogStyle />
-            <Logo style={{ height: '400px', position: 'fixed', zIndex: -1 }} />
+            <FogStyle/>
+            <Logo style={{height: '400px', position: 'fixed', zIndex: -1}}/>
           </div>
         </header>
         <section className=' main-page-content-section py-5  h-100'>
-          <MainPageCarousel />
-          <ProductsStore />
+          <OurServices/>
+          <MainPageCarousel/>
+          <MainPageAboutUs/>
+          <ProductsStore/>
         </section>
       </div>
-      <MainPageContact />
+      <MainPageContact/>
     </>
   );
 };

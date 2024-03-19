@@ -1,14 +1,14 @@
-import React, { useCallback, useEffect, useMemo } from 'react';
+import React, {useCallback, useEffect, useMemo} from 'react';
 import {
   MutationCache,
   QueryCache,
   QueryClient,
   QueryClientProvider,
 } from 'react-query';
-import { get } from 'react-hook-form';
+import {get} from 'react-hook-form';
 import 'config/i18n';
 import Router from 'routing/Router';
-import { StyledEngineProvider } from '@mui/material';
+import {StyledEngineProvider} from '@mui/material';
 
 function Root() {
   const handleErrors = useCallback((error: unknown) => {
@@ -25,7 +25,6 @@ function Root() {
         queries: {
           retry: 1,
           refetchOnWindowFocus: false,
-          staleTime: 3000,
         },
       },
       queryCache: new QueryCache({
@@ -53,8 +52,9 @@ function Root() {
   return (
     <QueryClientProvider client={queryClient} contextSharing={true}>
       <StyledEngineProvider injectFirst>
-        <Router />
+        <Router/>
       </StyledEngineProvider>
+
     </QueryClientProvider>
   );
 }
