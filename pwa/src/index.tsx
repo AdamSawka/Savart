@@ -5,13 +5,20 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import 'styles/main.scss'
 import reportWebVitals from './reportWebVitals';
 import Root from "modules/Root/Root";
+import {ThemeProvider, createTheme} from '@mui/material/styles';
+import {customTheme} from "theme/theme";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+const theme = createTheme(customTheme);
+
 root.render(
   <React.StrictMode>
-    <Root />
+    <ThemeProvider theme={theme}>
+      <Root/>
+    </ThemeProvider>
   </React.StrictMode>
 );
 

@@ -8,15 +8,15 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import { ReactComponent as Logo } from 'assets/logo-savart.svg';
+import {ReactComponent as Logo} from 'assets/logo-savart.svg';
 import NavItems from 'components/Navigation/NavLinkList';
-import { Link, useNavigate } from 'react-router-dom';
-import BasketIcon from 'components/Navigation/BasketIcon';
-import { useTranslation } from 'react-i18next';
-import { routes } from 'routing/routes';
+import {Link, useNavigate} from 'react-router-dom';
+import {useTranslation} from 'react-i18next';
+import {routes} from 'routing/routes';
+import {customTheme} from "theme/theme";
 
 function Navigation() {
-  const { t } = useTranslation();
+  const {t} = useTranslation();
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null,
@@ -31,15 +31,15 @@ function Navigation() {
   const navigate = useNavigate();
 
   return (
-    <AppBar sx={{ backgroundColor: '#fff' }} position='static'>
+    <AppBar sx={{backgroundColor: '#fff'}} position='static'>
       <Container maxWidth='xl'>
         <Box>
-          <IconButton sx={{ display: { md: 'none' } }}>
+          <IconButton sx={{display: {md: 'none'}}}>
             <Link to={routes.HOME.path}>
-              <Logo style={{ height: '80px' }} />
+              <Logo style={{height: '80px'}}/>
             </Link>
           </IconButton>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{flexGrow: 1, display: {xs: 'flex', md: 'none'}}}>
             <IconButton
               size='large'
               aria-label='account of current user'
@@ -48,7 +48,7 @@ function Navigation() {
               onClick={handleOpenNavMenu}
               color='inherit'
             >
-              <MenuIcon />
+              <MenuIcon/>
             </IconButton>
             <Menu
               id='menu-appbar'
@@ -65,7 +65,7 @@ function Navigation() {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: {xs: 'block', md: 'none'},
               }}
             >
               {navigationElements.map((page, index) => (
@@ -76,7 +76,7 @@ function Navigation() {
                     navigate(page.path);
                   }}
                 >
-                  <Typography textAlign='center' sx={{ color: '#222' }}>
+                  <Typography textAlign='center' sx={{color: '#222'}}>
                     {page.title}
                   </Typography>
                 </MenuItem>
@@ -87,8 +87,8 @@ function Navigation() {
           <Box
             sx={{
               flexGrow: 1,
-              display: { xs: 'none', md: 'grid' },
-              gridTemplateColumns: ' 1fr 1fr 1fr 1fr 6fr 1fr',
+              display: {xs: 'none', md: 'grid'},
+              gridTemplateColumns: ' 1fr 1fr 1fr 1fr 5fr 1fr',
               gridGap: '10px',
               mb: 1,
               pl: 4,
@@ -100,7 +100,7 @@ function Navigation() {
             }}
           >
             <Link to={routes.HOME.path}>
-              <Logo style={{ height: '80px' }} />
+              <Logo style={{height: '80px'}}/>
             </Link>
             {navigationElements.map((page, index) => (
               <Button
@@ -120,18 +120,26 @@ function Navigation() {
                 {page.title}
               </Button>
             ))}
-            <BasketIcon />
+            {/*<BasketIcon/>*/}
+            <Box/>
             <Button
-              sx={{ my: 2, mx: 2, color: '#552', borderColor: '#552' }}
+              sx={{my: 2, mx: 2, color: '#552', borderColor: '#552'}}
               variant='outlined'
             >
-              {t('Account')}
+              <Link to={routes.ADMIN.path} style={{
+                textDecoration: "none",
+                color: customTheme.palette.primary.main
+              }}>
+                {t('Admin')}
+              </Link>
             </Button>
+
           </Box>
         </Box>
       </Container>
     </AppBar>
-  );
+  )
+
 }
 
 export default Navigation;
