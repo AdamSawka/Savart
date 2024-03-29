@@ -1,17 +1,43 @@
 {
-  "name": "app",
-  "version": "0.0.0",
+  "name": "savart",
+  "version": "0.1.0",
   "private": true,
+  "description": "A Strapi application",
+  "license": "MIT",
+  "author": {
+    "name": "A Strapi developer"
+  },
   "scripts": {
-    "start": "node ./bin/www"
+    "build": "strapi build",
+    "develop": "strapi develop",
+    "prepare": "husky",
+    "start": "strapi start",
+    "strapi": "strapi",
+    "format": "prettier --write ."
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
-    "morgan": "~1.9.1",
-    "mysql": "^2.18.1"
+    "@commitlint/cli": "^19.2.1",
+    "@commitlint/config-conventional": "^19.1.0",
+    "@strapi/plugin-cloud": "4.21.0",
+    "@strapi/plugin-i18n": "4.21.0",
+    "@strapi/plugin-users-permissions": "4.21.0",
+    "@strapi/strapi": "4.21.0",
+    "lint-staged": "^15.2.2",
+    "pg": "8.8.0",
+    "prettier": "^3.2.5",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "5.3.4",
+    "styled-components": "5.3.3"
+  },
+  "devDependencies": {
+    "husky": "^9.0.11"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "b08c04d0-7a1a-44e8-82ab-bfbe29c57608"
   }
 }

@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles_guid",
+  "info": {
+    "singularName": "articles-id",
+    "pluralName": "articles-guid",
+    "displayName": "articles"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}
