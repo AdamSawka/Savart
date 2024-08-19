@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "multi_orders",
+  "info": {
+    "singularName": "multi-order",
+    "pluralName": "multi-orders",
+    "displayName": "MultiOrders"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "orderDate": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "datetime"
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "multi_order"
+    }
+  }
+}

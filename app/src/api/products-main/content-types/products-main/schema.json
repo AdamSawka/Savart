@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products_id",
+  "info": {
+    "singularName": "products-main",
+    "pluralName": "products-id",
+    "displayName": "products"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "minPrice": {
+      "type": "decimal"
+    },
+    "maxPrice": {
+      "type": "decimal"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "category": {
+      "type": "integer"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "description": {
+      "type": "blocks"
+    }
+  }
+}

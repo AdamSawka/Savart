@@ -122,18 +122,6 @@ function Navigation() {
             ))}
             {/*<BasketIcon/>*/}
             <Box/>
-            <Button
-              sx={{my: 2, mx: 2, color: '#552', borderColor: '#552'}}
-              variant='outlined'
-            >
-              <Link to={routes.ADMIN.path} style={{
-                textDecoration: "none",
-                color: customTheme.palette.primary.main
-              }}>
-                {t('Admin')}
-              </Link>
-            </Button>
-
           </Box>
         </Box>
       </Container>
