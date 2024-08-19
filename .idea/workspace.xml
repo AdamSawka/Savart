@@ -2,88 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b158009c-c58b-43a2-85c5-3a48e88afc56" name="Changes" comment="install strapi">
-      <change beforePath="$PROJECT_DIR$/.idea/Savart-new.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Savart-new.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.dockerignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.env.test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.php-cs-fixer.dist.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/bin/console" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/bin/phpunit" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/bootstrap.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/bundles.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/packages/api_platform.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/packages/cache.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/packages/debug.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/packages/doctrine.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/packages/doctrine_migrations.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/packages/framework.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/packages/mercure.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/packages/monolog.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/packages/nelmio_cors.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/packages/routing.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/packages/security.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/packages/twig.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/packages/validator.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/packages/web_profiler.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/preload.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/routes.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/routes/annotations.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/routes/api_platform.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/routes/framework.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/routes/security.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/routes/web_profiler.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/services.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/docker/caddy/default/Caddyfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/docker/caddy/dev/Caddyfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/docker/mysql/config-file.cnf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/docker/php/conf.d/app.dev.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/docker/php/conf.d/app.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/docker/php/conf.d/app.prod.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/docker/php/docker-entrypoint.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/docker/php/docker-healthcheck.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/docker/php/php-fpm.d/zz-docker.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/frankenphp/Caddyfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/frankenphp/conf.d/app.dev.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/frankenphp/conf.d/app.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/frankenphp/conf.d/app.prod.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/frankenphp/docker-entrypoint.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/frankenphp/worker.Caddyfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/migrations/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/migrations/Version20210930074739.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/migrations/Version20240218144659.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/migrations/Version20240218152105.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/migrations/Version20240218200100.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/phpunit.xml.dist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/public/apple-touch-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/public/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/Controller/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/Controller/ProductsController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/Entity/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/Entity/Categories.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/Entity/Orders.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/Entity/Products.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/Entity/Users.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/Kernel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/Repository/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/Repository/CategoriesRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/Repository/OrdersRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/Repository/ProductsRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/Repository/UsersRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/symfony.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/templates/base.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/tests/Api/GreetingsTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/tests/bootstrap.php" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/pwa/src/constans/common.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pwa/src/hooks/useGetMainPageQuery.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/api/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/api/src/api/product/content-types/product/schema.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/api/src/api/product/content-types/product/schema.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/api/types/generated/components.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/api/types/generated/components.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/api/types/generated/contentTypes.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/api/types/generated/contentTypes.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/api/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/api/api/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/pwa/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/pwa/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pwa/src/components/Navigation/Navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pwa/src/components/Navigation/Navigation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pwa/src/pages/Admin/Admin.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pwa/src/pages/Admin/EditProducts/EditProductTable.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pwa/src/pages/Admin/EditProducts/EditProducts.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pwa/src/pages/Admin/EditProducts/ProductRow.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pwa/src/routing/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pwa/src/routing/routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/hooks/useGetProductsQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pwa/src/hooks/useGetProductsQuery.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/pages/MainPage/MainPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pwa/src/pages/MainPage/MainPage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +27,13 @@
   </component>
   <component name="EditorConfigPreviewManager">
     <editorConfig file="$PROJECT_DIR$/.editorconfig" previewFile="$PROJECT_DIR$/pwa/src/components/MainPage/ProductsStore/Filters/Filters.tsx" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -114,7 +52,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/api" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pwa/src/hooks" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Users\Adam\PhpstormProjects\Savart-new\pwa\node_modules\typescript\lib" />
   </component>
@@ -128,6 +66,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Adam\PhpstormProjects\Savart-new\pwa\src\hooks" />
       <recent name="C:\Users\Adam\PhpstormProjects\Savart-new\api" />
       <recent name="C:\Users\Adam\PhpstormProjects\Savart-new\api\config" />
     </key>
@@ -142,7 +81,16 @@
       <updated>1719807862759</updated>
       <workItem from="1719807866693" duration="28000" />
       <workItem from="1724043811672" duration="62000" />
+      <workItem from="1724080498813" duration="8275000" />
     </task>
+    <task id="LOCAL-00001" summary="install strapi">
+      <created>1724080793163</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1724080793163</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,5 +107,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="install strapi" />
+    <option name="LAST_COMMIT_MESSAGE" value="install strapi" />
   </component>
 </project>

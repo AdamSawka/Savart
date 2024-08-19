@@ -6,6 +6,7 @@ import {ReactComponent as Logo} from 'assets/logo-savart-white.svg';
 import ProductsStore from 'components/MainPage/ProductsStore/ProductsStore';
 import {MainPageAboutUs} from "components/MainPage/MainPageAboutUs/MainPageAboutUs";
 import OurServices from "components/MainPage/OurServices/OurServices";
+import useGetMainPageQuery from "hooks/useGetMainPageQuery";
 
 const FogStyle = () => {
   return (
@@ -26,7 +27,10 @@ const FogStyle = () => {
   );
 };
 
+
 const MainPage = () => {
+  const {data:mainPageStoreData} =  useGetMainPageQuery({},{populate:"*"})
+  console.log(mainPageStoreData, 'mainPageStoreData');
   return (
     <>
       <div>

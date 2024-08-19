@@ -11,12 +11,9 @@ import MenuItem from '@mui/material/MenuItem';
 import {ReactComponent as Logo} from 'assets/logo-savart.svg';
 import NavItems from 'components/Navigation/NavLinkList';
 import {Link, useNavigate} from 'react-router-dom';
-import {useTranslation} from 'react-i18next';
 import {routes} from 'routing/routes';
-import {customTheme} from "theme/theme";
 
 function Navigation() {
-  const {t} = useTranslation();
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null,

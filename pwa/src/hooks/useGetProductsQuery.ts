@@ -2,7 +2,7 @@ import {useQuery, UseQueryOptions} from "react-query";
 import {getApiClient} from "helpers/Global";
 import {AxiosError} from "axios";
 
-const path = `${process.env.REACT_APP_API_ENDPOINT}/products`;
+const path = `${process.env.REACT_API_STRAPI_URL}/products`;
 const queryKey = "get-products";
 
 
