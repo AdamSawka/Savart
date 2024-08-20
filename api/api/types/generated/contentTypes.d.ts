@@ -863,6 +863,12 @@ export interface ApiMainMain extends Schema.SingleType {
           localized: true;
         };
       }>;
+    carousel: Attribute.Component<'blocks.main-page-store'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

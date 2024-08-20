@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b158009c-c58b-43a2-85c5-3a48e88afc56" name="Changes" comment="install strapi">
-      <change afterPath="$PROJECT_DIR$/pwa/src/constans/common.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pwa/src/hooks/useGetMainPageQuery.ts" afterDir="false" />
+    <list default="true" id="b158009c-c58b-43a2-85c5-3a48e88afc56" name="Changes" comment="added new query and get data from strapi">
+      <change afterPath="$PROJECT_DIR$/api/api/src/extensions/upload/strapi-server.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/api/config/plugins.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/api/config/plugins.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/api/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/api/src/api/product/content-types/product/schema.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/api/src/api/product/content-types/product/schema.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/api/types/generated/components.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/api/types/generated/components.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/api/types/generated/contentTypes.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/api/types/generated/contentTypes.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/api/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/api/api/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pwa/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/pwa/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pwa/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/pwa/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pwa/src/components/Navigation/Navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pwa/src/components/Navigation/Navigation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pwa/src/hooks/useGetProductsQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pwa/src/hooks/useGetProductsQuery.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/assets/animals1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/assets/deer1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/assets/deers2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/assets/deers3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/assets/deers4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/assets/draw1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/assets/image.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/assets/image1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/assets/image2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/assets/image3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/assets/image4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/assets/pillow1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/assets/pillow2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/assets/t-shirt1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/assets/t-shirt2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/assets/wall1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/assets/wall2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/components/MainPage/Carousel/Carousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pwa/src/components/MainPage/Carousel/Carousel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/components/MainPage/ProductsStore/ProductsStore.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pwa/src/components/MainPage/ProductsStore/ProductsStore.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/constans/common.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pwa/src/constans/common.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/hooks/useGetMainPageQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pwa/src/hooks/useGetMainPageQuery.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pwa/src/pages/MainPage/MainPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pwa/src/pages/MainPage/MainPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/src/pages/SingleProduct/SingleProduct.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pwa/src/pages/SingleProduct/SingleProduct.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +68,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pwa/src/hooks" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api/api/src/extensions/documentation/upload" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Users\Adam\PhpstormProjects\Savart-new\pwa\node_modules\typescript\lib" />
   </component>
@@ -66,9 +82,13 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Adam\PhpstormProjects\Savart-new\api\api\src\extensions\documentation\upload" />
       <recent name="C:\Users\Adam\PhpstormProjects\Savart-new\pwa\src\hooks" />
       <recent name="C:\Users\Adam\PhpstormProjects\Savart-new\api" />
       <recent name="C:\Users\Adam\PhpstormProjects\Savart-new\api\config" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Adam\PhpstormProjects\Savart-new\api\api\src\extensions" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -81,7 +101,8 @@
       <updated>1719807862759</updated>
       <workItem from="1719807866693" duration="28000" />
       <workItem from="1724043811672" duration="62000" />
-      <workItem from="1724080498813" duration="8275000" />
+      <workItem from="1724080498813" duration="8349000" />
+      <workItem from="1724129125818" duration="8291000" />
     </task>
     <task id="LOCAL-00001" summary="install strapi">
       <created>1724080793163</created>
@@ -90,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1724080793163</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added new query and get data from strapi">
+      <created>1724095545171</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1724095545171</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,6 +138,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="install strapi" />
-    <option name="LAST_COMMIT_MESSAGE" value="install strapi" />
+    <MESSAGE value="added new query and get data from strapi" />
+    <option name="LAST_COMMIT_MESSAGE" value="added new query and get data from strapi" />
   </component>
 </project>

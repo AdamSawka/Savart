@@ -7,6 +7,7 @@ import ProductsStore from 'components/MainPage/ProductsStore/ProductsStore';
 import {MainPageAboutUs} from "components/MainPage/MainPageAboutUs/MainPageAboutUs";
 import OurServices from "components/MainPage/OurServices/OurServices";
 import useGetMainPageQuery from "hooks/useGetMainPageQuery";
+import {paramsMainPage} from "constans/common";
 
 const FogStyle = () => {
   return (
@@ -27,10 +28,9 @@ const FogStyle = () => {
   );
 };
 
-
 const MainPage = () => {
-  const {data:mainPageStoreData} =  useGetMainPageQuery({},{populate:"*"})
-  console.log(mainPageStoreData, 'mainPageStoreData');
+  const { data:mainPageData, isLoading, error } = useGetMainPageQuery( {},paramsMainPage);
+
   return (
     <>
       <div>
@@ -52,9 +52,9 @@ const MainPage = () => {
         </header>
         <section className=' main-page-content-section py-5  h-100'>
           <OurServices/>
-          <MainPageCarousel/>
+          <MainPageCarousel data={mainPageData?.data?.attributes?.carousel}/>
           <MainPageAboutUs/>
-          <ProductsStore/>
+          <ProductsStore data={mainPageData?.data?.attributes?.store}/>
         </section>
       </div>
       <MainPageContact/>

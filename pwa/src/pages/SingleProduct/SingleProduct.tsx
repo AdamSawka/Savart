@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { products } from 'mockData';
 import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
-import image from 'assets/deers3.jpg';
+import image from 'assets/logo-savart-white.svg';
 import AddToBasketButton from 'components/Common/AddToBasketButton/AddToBasketButton';
 
 function SingleProduct() {
