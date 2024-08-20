@@ -3,26 +3,27 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
 import {ReactComponent as Logo} from 'assets/logo-savart.svg';
 import NavItems from 'components/Navigation/NavLinkList';
 import {Link, useNavigate} from 'react-router-dom';
 import {routes} from 'routing/routes';
+import BasketIcon from "components/Navigation/BasketIcon";
+import SearchInput from "components/Navigation/SearchInput";
+import {useState} from "react";
+import {Drawer, ListItem} from "@mui/material";
 
 function Navigation() {
 
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null,
-  );
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
+  const [navOpen, setNavOpen] = useState(false);
+  const handleOpenNavMenu = () => {
+    console.log('fsdf');
+    setNavOpen(true);
   };
   const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+    setNavOpen(false);
   };
   const navigationElements = NavItems();
   const navigate = useNavigate();
@@ -30,43 +31,31 @@ function Navigation() {
   return (
     <AppBar sx={{backgroundColor: '#fff'}} position='static'>
       <Container maxWidth='xl'>
-        <Box>
+        <Box className='flex-row-reverse' sx={{display:"flex"}} >
           <IconButton sx={{display: {md: 'none'}}}>
             <Link to={routes.HOME.path}>
               <Logo style={{height: '80px'}}/>
             </Link>
           </IconButton>
-          <Box sx={{flexGrow: 1, display: {xs: 'flex', md: 'none'}}}>
-            <IconButton
+          <Box id='hamburger-menu' sx={{flexGrow: 1, display: {xs: 'flex', md: 'none'}}}>
+            <Button
               size='large'
               aria-label='account of current user'
               aria-controls='menu-appbar'
               aria-haspopup='true'
               onClick={handleOpenNavMenu}
-              color='inherit'
+              className='color-black z-1'
             >
               <MenuIcon/>
-            </IconButton>
-            <Menu
+            </Button>
+            <Drawer
               id='menu-appbar'
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
+              open={navOpen}
               onClose={handleCloseNavMenu}
-              sx={{
-                display: {xs: 'block', md: 'none'},
-              }}
             >
               {navigationElements.map((page, index) => (
-                <MenuItem
+                <ListItem
+                  sx={{width:"200px"}}
                   key={index}
                   onClick={() => {
                     handleCloseNavMenu();
@@ -76,9 +65,9 @@ function Navigation() {
                   <Typography textAlign='center' sx={{color: '#222'}}>
                     {page.title}
                   </Typography>
-                </MenuItem>
+                </ListItem>
               ))}
-            </Menu>
+            </Drawer>
           </Box>
 
           <Box
@@ -117,7 +106,8 @@ function Navigation() {
                 {page.title}
               </Button>
             ))}
-            {/*<BasketIcon/>*/}
+            <BasketIcon/>
+            <SearchInput/>
             <Box/>
           </Box>
         </Box>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Grid, Paper} from "@mui/material";
+import {Box, Grid, Paper, Theme, useMediaQuery} from "@mui/material";
 import {useTranslation} from "react-i18next";
 import {styled} from '@mui/material/styles';
 import woodServices from "assets/wood-services.jpg";
@@ -18,44 +18,56 @@ const Item = styled(Paper)(({theme}) => ({
 
 function OurServices() {
   const {t} = useTranslation();
+  const isTablet = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
 
   return (
-    <Box>
-      <p style={{width: "100%", textAlign: "center"}}>
-        <span style={{fontSize: "50px", fontWeight: 300}}>
+    <Box style={{marginBottom:"150px"}}>
+      <div style={{width: "100%", textAlign: "center"}}>
+        <span style={{fontSize: isTablet ? "32px" : "50px", fontWeight: 300}}>
           {t('Our')}{' '}
         </span>
-        <span style={{fontSize: "50px", fontWeight: 600}}>
+        <span style={{fontSize: isTablet ? "32px" : "50px", fontWeight: 600}}>
           {t('Services')}
         </span>
-        <Grid justifyContent="center" container spacing={2}>
-          <Grid item xs={2}>
+        <Grid className='px-2' justifyContent="center" container spacing={2}>
+          <Grid item xs={12} sm={6} md={3}>
             <Item elevation={4}>
-              <img className="our-services-img" src={woodServices} alt="Wood services"/>
+              <img style={{
+                height: isTablet ? '200px' : '400px',
+                objectFit: 'cover'
+              }} className=" w-100" src={woodServices} alt="Wood services"/>
               {t("Wood Processing")}
             </Item>
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={12} sm={6} md={3}>
             <Item elevation={4}>
-              <img className="our-services-img" src={printing3D} alt="Printing"/>
+              <img style={{
+                height: isTablet ? '200px' : '400px',
+                objectFit: 'cover'
+              }} className=" w-100" src={printing3D} alt="Printing"/>
               {t("Modeling 3d")}
             </Item>
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={12} sm={6} md={3}>
             <Item elevation={4}>
-              <img className="our-services-img" src={individualProject} alt="project"/>
+              <img style={{
+                height: isTablet ? '200px' : '400px',
+                objectFit: 'cover'
+              }} className=" w-100" src={individualProject} alt="project"/>
               {t("Individual projects")}
             </Item>
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={12} sm={6} md={3}>
             <Item elevation={4}>
-              <img className="our-services-img" src={finishedProducts} alt="gift"/>
+              <img style={{
+                height: isTablet ? '200px' : '400px',
+                objectFit: 'cover'
+              }} className=" w-100" src={finishedProducts} alt="gift"/>
               {t("Sale Of Finished Products")}
             </Item>
           </Grid>
-
         </Grid>
-      </p>
+      </div>
 
     </Box>
   );

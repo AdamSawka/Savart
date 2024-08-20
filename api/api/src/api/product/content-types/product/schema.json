@@ -24,7 +24,7 @@
       },
       "type": "string"
     },
-    "desception": {
+    "description": {
       "pluginOptions": {
         "i18n": {
           "localized": true

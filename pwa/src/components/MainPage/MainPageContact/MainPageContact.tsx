@@ -2,15 +2,16 @@ import React from 'react';
 import emailjs from 'emailjs-com';
 import {useForm, Controller} from 'react-hook-form';
 import Button from '@mui/material/Button';
-import {Input, TextareaAutosize} from '@mui/material';
+import {Input, TextareaAutosize, Theme, useMediaQuery} from '@mui/material';
 import {useTranslation} from 'react-i18next';
 import Box from '@mui/material/Box';
 
 const MainPageContact = () => {
   const {t} = useTranslation();
   const {control} = useForm();
+  const isTablet = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
 
-  function sendEmail(e) {
+  function sendEmail(e: any) {
     e.preventDefault();
     emailjs
       .sendForm(
@@ -42,7 +43,6 @@ const MainPageContact = () => {
         >
           <Controller
             control={control}
-            type='text'
             name='user_name'
             render={({field: {value, onChange}}) => (
               <Input
@@ -55,13 +55,12 @@ const MainPageContact = () => {
           />
           <Controller
             control={control}
-            type='email'
             name='user_email'
             render={({field: {value, onChange}}) => (
               <Input
                 placeholder={t('Fill Mail')}
                 value={value}
-                type='textarea'
+                type='email'
                 onChange={onChange}
                 sx={{margin: 2, width: '300px'}}
               />
@@ -69,7 +68,6 @@ const MainPageContact = () => {
           />
           <Controller
             control={control}
-            type='text'
             name='text'
             render={({field: {value, onChange}}) => (
               <TextareaAutosize
@@ -77,7 +75,7 @@ const MainPageContact = () => {
                 value={value}
                 minRows={5}
                 onChange={onChange}
-                style={{margin: 3, width: '500px'}}
+                style={{margin: 3, width: isTablet ? '90%' : '500px'}}
               />
             )}
           />

@@ -1034,7 +1034,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    desception: Attribute.Text &
+    description: Attribute.Text &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

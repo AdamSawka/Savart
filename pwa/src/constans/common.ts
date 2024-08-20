@@ -24,3 +24,6 @@ export const paramsMainPage = {
   }
 
 };
+export const paramsSingleItem = {
+  populate: "*"
+};
